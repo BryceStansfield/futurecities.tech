@@ -18,17 +18,17 @@
 	</head>
 	<body class="ThemeA" id="container">
 		
-		<div id="SuggestionOverlayBackground">
-			<div id="SuggestionOverlay">
-				<div id="suggestionTitle">
-				
-				</div>
+		<div id="suggestionOverlayBackground">
+			<div id="suggestionOverlay">
+				<h4 id="suggestionTitle">
+					<span>Suggest to the council to install a </span><span id=""></span><span> in this area</span>
+				</h4>
 				<div id="seggestionMap">
 				
 				</div>
 				<div id="suggestionOptions">
-					<button type="button" class="suggestionPositive" onclick="suggest(true)"></button>
-					<button type="button" class="suggestionNegative" onclick="suggest(false)"></button>
+					<button type="button" id="suggestionPositive" onclick="suggest(true)">Suggest</button>
+					<button type="button" id="suggestionNegative" onclick="suggest(false)">Cancel</button>
 					
 				</div>
 			</div>
@@ -79,6 +79,9 @@
 				<li>
 					<input class="radio" type="radio" name="utility" value="Bike Rack"> Bike Rack
 				</li>
+				<li>
+					<input class="radio" type="radio" name="utility" value="Elictric Car Charging Station"> Elictric Car Charging Station
+				</li>
 				
 				<li class="category">
 					<h3>Suggestions</h3>
@@ -87,7 +90,7 @@
 					<p>Suggest a new public utility in your area</p>
 				</li>
 				<li>
-					<button type="button" class="Suggest" onclick="suggest()">Suggest</button>
+					<button type="button" class="Suggest" onclick="selectSuggestion()">Suggest</button>
 				</li>
 				<li class="category">
 					<h3>About</h3>

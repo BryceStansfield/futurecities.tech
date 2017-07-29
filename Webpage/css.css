@@ -1,9 +1,7 @@
 *{
 	margin:0px;
-	font-family:Arial Helvacetica sans-serif !important;
-
+	font-family:Arial Helvacetica sans-serif;
 }
-
 :root {
   --theme-color: #0088FF;
   --grey-color: #AAAAAA;
@@ -226,3 +224,91 @@
 	transition: all 0.3s;
 }
 
+#suggestionOverlayBackground{
+	z-index:8;
+	
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	right:0px;
+	left:0px;
+	
+	background:rgba(0,0,0,0.6);
+	display:block;
+}
+
+#suggestionOverlay{
+	z-index:9;
+	
+	position:absolute;
+	top:100px;
+	bottom:100px;
+	right:50px;
+	left:50px;
+	
+	background:#EEEEEE;
+	border-radius:5px;
+}
+
+#suggestionTitle{
+	padding:15px;
+	height:50px;
+	vertical-align: middle;
+	
+	color:var(--theme-color);
+}
+
+#seggestionMap{
+	background:#AAAAAA;
+	
+	position:absolute;
+	top:50px;
+	bottom:50px;
+	left:0px;
+	right:0px;
+}
+
+#suggestionOptions{
+	
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	
+	height:50px;
+}
+
+#suggestionPositive{
+	float:right;
+	
+	padding:15px;
+	display:inline;
+	vertical-align:middle;
+	
+	background:none;
+	border:none;
+	cursor:pointer;
+	
+	color:var(--theme-color);
+	height:50px;
+	border-left:1px solid #AAAAAA;
+}
+
+#suggestionNegative{
+	float:right;
+	
+	padding:15px;
+	display:inline;
+	vertical-align:middle;
+	
+	background:none;
+	border:none;
+	cursor:pointer;
+	
+	color:var(--theme-color);
+	height:50px;
+}
+
+#suggestionPositive:focus, #suggestionNegative:focus{
+	outline:none;
+}
