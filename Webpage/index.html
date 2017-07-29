@@ -8,9 +8,10 @@
 		<!--<script src='calcs.js'></script>-->
 
 		<script>
+			var map;
 		  function initMap() {
 			var goldcoast = {lat: -28.015749, lng: 153.399919};
-			var map = new google.maps.Map(document.getElementById('map'), {
+			map = new google.maps.Map(document.getElementById('map'), {
 			  
 				minZoom:5,
 				zoom:10,
@@ -25,6 +26,19 @@
 			  map: map
 			});
 		  }
+		  
+		  function onBodyLoad(){
+			
+			// Create the search box and link it to the UI element.
+			var input = document.getElementById("mapSearch");
+			var searchBox = new google.maps.places.SearchBox(input);
+			map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+			// Bias the SearchBox results towards current map's viewport.
+			map.addListener('bounds_changed', function() {
+			  searchBox.setBounds(map.getBounds());
+			});
+		  }
 		</script>
 		<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoSWQDVbCGKU1jSsncaCLm5Gt0YsQoILI&callback=initMap">
@@ -32,7 +46,7 @@
 
 		<title>Future Cities</title>
 	</head>
-	<body class="ThemeA">
+	<body class="ThemeA" id="container" onload="onBodyLoad()">
 		<button type="button" id="navigationDrawer" onclick="toggleNavigation()"></button>
 		<nav id="navigation">
 			<header id="header">
@@ -40,7 +54,7 @@
 			</header>
 			<ul>
 				<li class="category">
-					<input type="text" class="searchBar" placeholder="Search Places"></input>
+					<input id="mapSearch" type="text" class="searchBar" placeholder="Search Places"></input>
 					<button type="button" class="GPSbutton" onclick="getLocation()"></button>
 					<select class="dropDownMenu" name="disatnce">
 						<option value="100">100m</option>

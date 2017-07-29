@@ -20,6 +20,12 @@
 	
 	background:#EEEEEE;
 	box-shadow:0px 0px 5px rgba(0,0,0,0.5);
+	
+	transition: all 0.3s;
+}
+
+.navHide #navigation{
+	left:-400px;
 }
 
 .ThemeA #header{
@@ -44,6 +50,12 @@
 
 	width:50px;
 	height:90px;
+	
+	transition: all 0.3s;
+}
+
+.navHide #navigationDrawer{
+	left:0px;
 }
 
 .ThemeA #navigation ul{
@@ -123,4 +135,10 @@
 	top:0px;
 	bottom:0px;
 	right:0px;
+	
+	transition: all 0.3s;
+}
+
+.navHide #map{
+	left:0px;
 }
