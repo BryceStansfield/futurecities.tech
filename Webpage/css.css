@@ -42,15 +42,17 @@
 	padding:0px;
 }
 
+.ThemeA #navigation h3{
+    color:var(--theme-color);
+}
+
 .ThemeA #navigation ul li{
 	padding:10px;
 	
 }
 
 .ThemeA #navigation ul .category{
-	border:1px solid #AAAAAA;
-	border-left:none;
-	border-right:none;
+	border-bottom:1px solid #AAAAAA;
 }
 
 .ThemeA .searchBar{
@@ -58,16 +60,33 @@
 	border:1px solid var(--theme-color);
 	background:#EEEEEE;
 	border-radius:5px;
-	display:inline-block;
+	display:inline;
+	vertical-align: middle;
 }
 
 .ThemeA .GPSbutton{
-	width:50px;
-	height:50px;
+	width:40px;
+	height:40px;
 	background:var(--theme-color);
 	border-radius:5px;
 	border:none;
-	display:inline-block;
+	display:inline;
+	vertical-align: middle;
+}
+
+.ThemeA .dropDownMenu{
+	padding:10px;
+	border:1px solid var(--theme-color);
+	background:#EEEEEE;
+	border-radius:5px;
+	display:inline;
+	vertical-align: middle;
+	
+}
+
+.ThemeA .dropDownMenu option{
+	border:1px solid #AAAAAA;
+	
 }
 
 .ThemeA #map{
