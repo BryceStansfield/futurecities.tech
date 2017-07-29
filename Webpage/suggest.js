@@ -30,6 +30,7 @@ function suggest(action){
 
 function selectSuggestion(){
 	
+	var overlay = document.getElementById("suggestionOverlayBackground");
 	overlay.style.display = "block";
 	
 	
