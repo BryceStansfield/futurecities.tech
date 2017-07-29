@@ -1,16 +1,21 @@
 *{
 	margin:0px;
-	font-family:Arial;
+	font-family:ariel;
+
 }
 
 :root {
+<<<<<<< HEAD
+  --theme-color: #8000FF;
+=======
   --theme-color: #0088FF;
+>>>>>>> c1f811857989b0a1f3dad4fa249b3d519dbc2399
 }
 
 .ThemeA #navigation{
 	float:left;
 	background:#EEEEEE;
-	
+
 	height:100%;
 	width:400px;
 }
@@ -19,8 +24,8 @@
 	padding:12px;
 	padding-left:60px;
 	background:var(--theme-color);
-	
-	
+
+
 	color:#FFFFFF;
 }
 
@@ -29,10 +34,10 @@
 	background:var(--theme-color) url('media/ic_apps_white_24dp_1x.png');
 	background-repeat:no-repeat;
 	background-position: center;
-	
+
 	border-bottom-right-radius:8px;
 	border:none;
-	
+
 	width:50px;
 	height:50px;
 }
@@ -48,7 +53,7 @@
 
 .ThemeA #navigation ul li{
 	padding:10px;
-	
+
 }
 
 .ThemeA #navigation ul .category{
@@ -81,12 +86,12 @@
 	border-radius:5px;
 	display:inline;
 	vertical-align: middle;
-	
+
 }
 
 .ThemeA .dropDownMenu option{
 	border:1px solid #AAAAAA;
-	
+
 }
 
 .ThemeA #map{
