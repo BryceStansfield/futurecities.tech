@@ -1,6 +1,7 @@
-function point(lat, long){
+function point(lat, long, radius){
 	this.lat = lat;
 	this.long = long;
+	this.radius = radius || 0;
 }
 
 function d2r(x){
