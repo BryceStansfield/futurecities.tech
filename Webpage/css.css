@@ -5,11 +5,7 @@
 }
 
 :root {
-<<<<<<< HEAD
-  --theme-color: #8000FF;
-=======
   --theme-color: #0088FF;
->>>>>>> c1f811857989b0a1f3dad4fa249b3d519dbc2399
 }
 
 .ThemeA #navigation{
@@ -94,6 +90,17 @@
 
 }
 
+.ThemeA .checkbox{
+	-webkit-appearance: none;
+	padding:8px;
+	border:1px solid var(--theme-color);
+	border-radius:3px;
+	
+}
+
+.ThemeA .checkbox:checked{
+	background:var(--theme-color);
+}
 .ThemeA #map{
 	float:left;
 	width:calc(100% - 400px);
