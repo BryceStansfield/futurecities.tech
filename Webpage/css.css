@@ -50,7 +50,10 @@
     list-style-type: none;
 	padding:0px;
 	
-	position:reltive;
+	position:absolute;
+	top:90px;
+	bottom:0px;
+	
 	overflow:scroll;
 }
 
