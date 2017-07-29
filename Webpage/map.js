@@ -20,7 +20,7 @@ function initMap() {
 	directionsDisplay.setMap(map);
 
 	var marker = new google.maps.Marker({
-		position: uluru,
+		position: goldcoast,
 		map: map
 	});
 }
