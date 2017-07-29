@@ -13,14 +13,13 @@
 	background:#EEEEEE;
 
 	height:100%;
-	width:400px;
+	width:330px;
 }
 
 .ThemeA #header{
-	padding:12px;
 	padding-left:60px;
 	background:var(--theme-color);
-
+	
 
 	color:#FFFFFF;
 }
@@ -91,7 +90,7 @@
 }
 
 .ThemeA .checkbox{
-	-webkit-appearance: none;
+	/*-webkit-appearance: none;*/
 	padding:8px;
 	border:1px solid var(--theme-color);
 	border-radius:3px;

@@ -2,6 +2,7 @@
 	<head>
 		<link rel="stylesheet" href="css.css">
 		<script src='js.js'></script>
+		<script src='calc.js'></script>
 		
 		<!--<script src='calcs.js'></script>-->
 
@@ -16,6 +17,11 @@
 			  position: uluru,
 			  map: map
 			});
+			var mapOption = {
+				maxZoom:17,
+				minZoom:15,
+				zoom:15
+			}
 		  }
 		</script>
 		<script async defer
@@ -28,7 +34,7 @@
 		<button type="button" id="navigationDrawer" onclick="toggleNavigation()"></button>
 		<nav id="navigation">
 			<header id="header">
-				<h2>Future Cities</h3>
+				<img src="media/skyline.png"></img>
 			</header>
 			<ul>
 				<li class="category">
