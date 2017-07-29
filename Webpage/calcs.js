@@ -32,12 +32,13 @@ function closest(places, pos){
 }
 
 function findGaps(places, r, startX, endX, startY, endY, delta){
+	// startX and startY are the smaller of the coords
 	y = startY;
 	x = startX;
 	gaps = [];
-	while(y <= endY){
+	while(x <= endX){
 		gaps.push([]);
-		while(x <= endX){
+		while(y <= endY){
 			isGap = true;
 			for(var i = 0; i < places.length; i++){
 				if(distance(point(x,y), places[i]) <= r){
@@ -46,10 +47,57 @@ function findGaps(places, r, startX, endX, startY, endY, delta){
 				}
 			}
 			gaps[gaps.length - 1].push(isGap);
-			x += delta;
+			y += delta;
 		}
-		x = startX;
-		y += delta;
+		y = startY;
+		x += delta;
 	}
 	return(gaps);
 }
+
+function dotValue(gaps, dotRange, x, y){
+	value = 0;
+	for(var circY = Math.min(y - dotRange, 0); circY <= Math.max(y + dotRange, gaps[0].length - 1); y++){
+		for(var circX = Math.min(x - dotRange, 0); circX <= Math.max(x + dotRange, gaps.length - 1); x++){
+			if(gaps[circX][circY] == true){
+				value += 1;
+			}
+		}
+	}
+	return(value);
+}
+
+function updateGapsSquare(gaps, dotRange){
+	for(var circY = Math.min(y - dotRange, 0); circY <= Math.max(y + dotRange, gaps[0].length - 1); y++){
+		for(var circX = Math.min(x - dotRange, 0); circX <= Math.max(x + dotRange, gaps.length - 1); x++){
+			gaps[circX][circY] = false;
+		}
+	}
+}
+
+function minimizeGapsGreedyApprox(gaps, dotRange, adding){
+	// Giving a map of gaps and a dotrange of the util, it trys to add adding utils to fill in the biggest gaps
+	place = [];
+	for(var number = 0; number < adding; number++){
+		max = 0;
+		bestSpot = [0,0];
+		for(var x = 0; x < gaps.length; x++){
+			for(var y = 0; y < gaps.length; y++){
+				value = dotValue(gaps, dotRange, x, y);
+				if(value > max){
+					bestSpot = [x,y];
+					max = value;
+				}
+			}
+		}
+		if(max != 0){
+			place.push(bestSpot);
+			gaps = updateGapsSquare(gaps, dotRange);
+		}
+		else{
+			number = Infinity;
+		}
+	}
+	return(place);
+}
+
