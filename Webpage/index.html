@@ -5,6 +5,8 @@
 		<script src='calcs.js'></script>
 		<script src='map.js'></script>
 		<script src='fetching.js'></script>
+		<script src='location.js'></script>
+		<script src='suggest.js'></script>
 		
 		<!--<script src='calcs.js'></script>-->
 
@@ -14,7 +16,24 @@
 
 		<title>Future Cities</title>
 	</head>
-	<body class="ThemeA" id="container" onload="onBodyLoad()">
+	<body class="ThemeA" id="container">
+		
+		<div id="SuggestionOverlayBackground">
+			<div id="SuggestionOverlay">
+				<div id="suggestionTitle">
+				
+				</div>
+				<div id="seggestionMap">
+				
+				</div>
+				<div id="suggestionOptions">
+					<button type="button" class="suggestionPositive" onclick="suggest(true)"></button>
+					<button type="button" class="suggestionNegative" onclick="suggest(false)"></button>
+					
+				</div>
+			</div>
+		</div>
+		
 		<button type="button" id="navigationDrawer" onclick="toggleNavigation()"><img src="media/arrow.png" id="drawerIcon"></img></button>
 		<nav id="navigation">
 			<header id="header">
@@ -24,7 +43,7 @@
 				<li class="category" id="searchBar">
 					<input id="mapSearch" type="text" placeholder="Search Places"></input>
 					<button type="button" class="SearchButton" onclick="search()"></button>
-					<button type="button" class="GPSbutton tint" onclick="getLocation()"></button>
+					<button type="button" class="GPSbutton" onclick="getLocation()"></button>
 					
 					<!--
 					<select class="dropDownMenu" name="disatnce">
@@ -43,7 +62,7 @@
 					<h3>Public Utilities</h3>
 				</li>
 				<li>
-					<input class="radio" type="radio" name="utility" value="Taps" checked="checked"> Taps
+					<input class="radio" type="radio" name="utility" value="Taps" id="tabs" checked="checked"><label for="taps">Taps</label>
 				</li>
 				<li>
 					<input class="radio" type="radio" name="utility" value="Bathroom"> Toilets
@@ -80,8 +99,8 @@
 			</ul>
 
 		</nav>
-		<main id="map">
-			<img src="https://erinlyyc.com/wp-content/uploads/2017/05/google-maps.jpg" width="80%" height="80%"></img>
-		</main>
+		<div id="map">
+			[Google Maps]
+		</div>
 	</body>
 </html>
