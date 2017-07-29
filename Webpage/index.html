@@ -4,6 +4,7 @@
 		<script src='js.js'></script>
 		<script src='calcs.js'></script>
 		<script src='map.js'></script>
+		<script src='fetching.js'></script>
 		
 		<!--<script src='calcs.js'></script>-->
 
@@ -20,9 +21,12 @@
 				<img src="media/skyline.png"></img>
 			</header>
 			<ul>
-				<li class="category">
-					<input id="mapSearch" type="text" class="searchBar" placeholder="Search Places"></input>
-					<button type="button" class="GPSbutton" onclick="getLocation()"></button>
+				<li class="category" id="searchBar">
+					<input id="mapSearch" type="text" placeholder="Search Places"></input>
+					<button type="button" class="SearchButton" onclick="search()"></button>
+					<button type="button" class="GPSbutton tint" onclick="getLocation()"></button>
+					
+					<!--
 					<select class="dropDownMenu" name="disatnce">
 						<option value="100">100m</option>
 						<option value="100">200m</option>
@@ -33,36 +37,37 @@
 
 
 					</select>
+					-->
 				</li>
 				<li class="category">
 					<h3>Public Utilities</h3>
 				</li>
 				<li>
-					<input class="checkbox" type="checkbox" name="Utility" value="Bathroom"> Toilet
+					<input class="radio" type="radio" name="utility" value="Bathroom"> Toilet
 				</li>
 				<li>
-					<input class="checkbox" type="checkbox" name="Utility" value="Taps"> Taps
+					<input class="radio" type="radio" name="utility" value="Taps"> Taps
 				</li>
 				<li>
-					<input class="checkbox" type="checkbox" name="Utility" value="BBQ"> BBQ
+					<input class="radio" type="radio" name="utility" value="BBQ"> BBQ
 				</li>
 				<li>
-					<input class="checkbox" type="checkbox" name="Utility" value="Public Shower"> Public Shower
+					<input class="radio" type="radio" name="utility" value="Public Shower"> Public Shower
 				</li>
 				<li>
-					<input class="checkbox" type="checkbox" name="utility" value="Bubbler"> Bubbler
+					<input class="radio" type="radio" name="utility" value="Bubbler"> Bubbler
 				</li>
 				<li>
-					<input class="checkbox" type="checkbox" name="Utility" value="Bike Rack"> Bike Rack
+					<input class="radio" type="radio" name="utility" value="Bike Rack"> Bike Rack
 				</li>
 				<li>
-					<input class="checkbox" type="checkbox" name="Utility" value=""> Bike Rack
+					<input class="radio" type="radio" name="utility" value=""> Bike Rack
 				</li>
 				<li>
-					<input class="checkbox" type="checkbox" name="Utility" value=""> Bike Rack
+					<input class="radio" type="radio" name="utility" value=""> Bike Rack
 				</li>
 				<li>
-					<input class="checkbox" type="checkbox" name="Utility" value=""> Bike Rack
+					<input class="radio" type="radio" name="utility" value=""> Bike Rack
 				</li>
 
 
@@ -72,7 +77,9 @@
 				<li>
 					<p>Suggest a new public utility in your area</p>
 				</li>
-
+				<li>
+					<button type="button" class="Suggest" onclick="suggest()">Suggest</button>
+				</li>
 				<li class="category">
 					<h3>About</h3>
 				</li>

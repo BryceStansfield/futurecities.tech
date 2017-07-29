@@ -6,6 +6,7 @@
 
 :root {
   --theme-color: #0088FF;
+  --grey-color: #AAAAAA;
 }
 
 .ThemeA #navigation{
@@ -76,29 +77,75 @@
 .ThemeA #navigation ul li{
 	padding:10px;
 
+	vertical-align: middle;
 }
 
 .ThemeA #navigation ul .category{
 	border-bottom:1px solid #AAAAAA;
 }
 
-.ThemeA .searchBar{
-	padding:10px;
-	border:1px solid var(--theme-color);
-	background:#EEEEEE;
-	border-radius:5px;
+.ThemeA #navigation ul #searchBar{
+	padding:0px;
+	background:#FFFFFF;
+	border-top:1px solid var(--theme-color);
+	
+	position:relative;
+}
+
+#mapSearch:focus, .GPSbutton:focus, .SearchButton:focus{
+	outline:none;
+	border:none;
+}
+
+.ThemeA #mapSearch{
+	padding:20;
+	padding-left:10px;
+	padding-right:70px;
+	
 	display:inline;
+	border:none;
 	vertical-align: middle;
+	
+	width:calc(100% - 60px);
 }
 
 .ThemeA .GPSbutton{
-	width:40px;
-	height:40px;
-	background:var(--theme-color);
-	border-radius:5px;
+	width:60px;
+	
+	background:url('media/location.png');
+	background-repeat:no-repeat;
+	background-position: center;
+	
 	border:none;
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	right:0px;
+	
 	display:inline;
 	vertical-align: middle;
+	cursor:pointer;
+}
+
+.ThemeA .SearchButton{
+	
+	width:60px;
+	
+	border:none;
+	position:absolute;
+	top:10px;
+	bottom:10px;
+	right:60px;
+	
+	background:url('media/search.png');
+	background-repeat:no-repeat;
+	background-position: center;
+	
+	border-right:1px solid var(--grey-color);
+	
+	display:inline;
+	vertical-align: middle;
+	cursor:pointer;
 }
 
 .ThemeA .dropDownMenu{
@@ -116,17 +163,42 @@
 
 }
 
-.ThemeA .checkbox{
-	/*-webkit-appearance: none;*/
-	padding:8px;
-	border:1px solid var(--theme-color);
-	border-radius:3px;
-	background:url('media/tick.png');
+.ThemeA .radio{
+	-webkit-appearance: none;
+	border-radius:11px;
+	vertical-align: middle;
+	
+	width:20px;
+	height:20px;
+	margin-right:5px;
+	
+	border:5px solid #EEEEEE;
+	background:#EEEEEE;
+	box-shadow:0px 0px 0px 1px var(--theme-color);
+	
+	display:inline-block;
 }
 
-.ThemeA .checkbox:checked{
-	background:url('media/tick.png') var(--theme-color);
+.ThemeA .radio:checked{
+	background:var(--theme-color);
 }
+
+.ThemeA .radio:focus{
+	outline:none;
+}
+
+.ThemeA .suggest{
+	padding:10px;
+	border:1px solid var(--theme-color);
+	background:#EEEEEE;
+	border-radius:5px;
+	display:inline;
+	vertical-align: middle;
+	
+	color:var(--theme-color);
+}
+
+
 .ThemeA #map{
 	z-index:4;
 	
