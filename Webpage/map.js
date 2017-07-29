@@ -3,7 +3,7 @@ var suggestMap;
 var directionsDisplay;
 
 function initMap() {
-	var uluru = {lat: -25.363, lng: 131.044};
+	var goldcoast = {lat: -27.948276, lng: 153.407532};
 
 	directionsDisplay = new google.maps.DirectionsRenderer();
 
