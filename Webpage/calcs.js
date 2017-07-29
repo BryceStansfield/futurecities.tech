@@ -3,19 +3,24 @@ function point(lat, long){
 	this.long = long;
 }
 
+function d2r(x){
+	return(x * Math.PI / 180);
+}
+
 function distance(point1, point2){ // From http://www.movable-type.co.uk/scripts/latlong.html
 	var R = 6371e3; // metres
-	var φ1 = point1.lat.toRadians();
-	var φ2 = point2.lat.toRadians();
-	var Δφ = (point2.lat-point1.lat).toRadians();
-	var Δλ = (point1.long-point2.long).toRadians();
+	var l1 = d2r(point1.lat);
+	var l2 = d2r(point2.lat);
+	var dl = d2r(point2.lat-point1.lat);
+	var don = d2r(point1.long-point2.long);
 
-	var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-        Math.cos(φ1) * Math.cos(φ2) *
-        Math.sin(Δλ/2) * Math.sin(Δλ/2);
+	var a = Math.sin(dl/2) * Math.sin(dl/2) +
+        Math.cos(l1) * Math.cos(l2) *
+        Math.sin(don/2) * Math.sin(don/2);
+    console.log(a);
 	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
-	return(R * c)
+	return(R * c);
 }
 
 function closest(places, pos){
