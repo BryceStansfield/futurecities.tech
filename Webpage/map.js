@@ -1,4 +1,5 @@
 var map = 0;	// Init scope
+var directionsService = new google.maps.DirectionsService;
 
 function initMap() {
 	var uluru = {lat: -25.363, lng: 131.044};
@@ -38,4 +39,13 @@ function massCirclePlacement(points){
 			map: map
 		});
 	}
+}
+
+function direct(from, to, directions){
+	directions.route({
+		origin: from,
+		destination: to,
+		travelMode: 'WALKING',
+		provideRouteAlternatives: true,
+	})
 }
