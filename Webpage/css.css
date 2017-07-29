@@ -95,13 +95,14 @@
 	padding:8px;
 	border:1px solid var(--theme-color);
 	border-radius:3px;
-	
+	background:url('media/tick.png');
 }
 
 .ThemeA .checkbox:checked{
-	background:var(--theme-color);
+	background:url('media/tick.png') var(--theme-color);
 }
 .ThemeA #map{
 	float:left;
 	width:calc(100% - 400px);
+	height:100%;
 }
