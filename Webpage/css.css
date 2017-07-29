@@ -5,7 +5,11 @@
 }
 
 :root {
+<<<<<<< HEAD
   --theme-color: #8000FF;
+=======
+  --theme-color: #0088FF;
+>>>>>>> c1f811857989b0a1f3dad4fa249b3d519dbc2399
 }
 
 .ThemeA #navigation{
