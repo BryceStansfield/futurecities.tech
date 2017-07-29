@@ -1,7 +1,7 @@
 from fastkml import kml
 #from geoClasses import point
 
-doc = open("../datasets/publictoilet.kml").read()
+doc = open("../datasets/doc.kml").read()
 last = 0
 pos = 0
 
