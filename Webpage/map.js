@@ -1,4 +1,5 @@
 var map = 0;	// Init scope
+var suggestMap;
 var directionsDisplay;
 
 function initMap() {
@@ -6,11 +7,16 @@ function initMap() {
 
 	directionsDisplay = new google.maps.DirectionsRenderer();
 
-	map = new google.maps.Map(document.getElementById('map'), {
+	var map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 4,
-		center: uluru
+		center: goldcoast
 	});
 
+	var suggestMap = new google.maps.Map(document.getElementById('seggestionMap'), {
+		zoom: 4,
+		center: goldcoast
+	});
+	
 	directionsDisplay.setMap(map);
 
 	var marker = new google.maps.Marker({
