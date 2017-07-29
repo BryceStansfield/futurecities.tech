@@ -2,26 +2,27 @@
 	<head>
 		<link rel="stylesheet" href="css.css">
 		<script src='js.js'></script>
-		<script src='calc.js'></script>
+		<script src='calcs.js'></script>
 		
 		<!--<script src='calcs.js'></script>-->
 
 		<script>
 		  function initMap() {
-			var uluru = {lat: -25.363, lng: 131.044};
+			var goldcoast = {lat: -28.015749, lng: 153.399919};
 			var map = new google.maps.Map(document.getElementById('map'), {
-			  zoom: 4,
-			  center: uluru
+			  
+				minZoom:5,
+				zoom:10,
+			  center: goldcoast
 			});
 			var marker = new google.maps.Marker({
-			  position: uluru,
+			  position: goldcoast,
 			  map: map
 			});
-			var mapOption = {
-				maxZoom:17,
-				minZoom:15,
-				zoom:15
-			}
+			var marker2 = new google.maps.Marker({
+			  position: {lat: -28.015957, lng: 153.402891},
+			  map: map
+			});
 		  }
 		</script>
 		<script async defer
