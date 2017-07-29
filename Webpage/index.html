@@ -7,39 +7,6 @@
 		
 		<!--<script src='calcs.js'></script>-->
 
-		<script>
-			var map;
-		  function initMap() {
-			var goldcoast = {lat: -28.015749, lng: 153.399919};
-			map = new google.maps.Map(document.getElementById('map'), {
-			  
-				minZoom:5,
-				zoom:10,
-			  center: goldcoast
-			});
-			var marker = new google.maps.Marker({
-			  position: goldcoast,
-			  map: map
-			});
-			var marker2 = new google.maps.Marker({
-			  position: {lat: -28.015957, lng: 153.402891},
-			  map: map
-			});
-		  }
-		  
-		  function onBodyLoad(){
-			
-			// Create the search box and link it to the UI element.
-			var input = document.getElementById("mapSearch");
-			var searchBox = new google.maps.places.SearchBox(input);
-			map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-			// Bias the SearchBox results towards current map's viewport.
-			map.addListener('bounds_changed', function() {
-			  searchBox.setBounds(map.getBounds());
-			});
-		  }
-		</script>
 		<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoSWQDVbCGKU1jSsncaCLm5Gt0YsQoILI&callback=initMap">
 		</script>
