@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css.css">
+		<script src='js.js'></script>
+		<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoSWQDVbCGKU1jSsncaCLm5Gt0YsQoILI&callback=initMap">
+		</script>
+		
+		
+		<title>Future Cities</title>
+	</head>
+	<body class="ThemeA">
+		<button type="button" id="navigationDrawer" onclick="toggleNavigation()"></button>
+		<nav id="navigation">
+			<header id="header">
+				<h2>Future Cities</h3>
+			</header>
+			<ul>
+				<li class="category">
+					<input type="text" class="searchBar" placeholder="Search Places"></input>
+					<button type="button" class="GPSbutton"></button>
+				</li>
+				
+			</ul>
+		
+		</nav>
+		<main id="map">
+			<!--<img src="https://erinlyyc.com/wp-content/uploads/2017/05/google-maps.jpg" width="100%" height="100%"></img>
+			-->
+		</main>
+	</body>
+</html>

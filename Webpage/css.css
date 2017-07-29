@@ -1,0 +1,76 @@
+*{
+	margin:0px;
+	font-family:Arial;
+}
+
+:root {
+  --theme-color: #0033AA;
+}
+
+.ThemeA #navigation{
+	float:left;
+	background:#EEEEEE;
+	
+	height:100%;
+	width:400px;
+}
+
+.ThemeA #header{
+	padding:12px;
+	padding-left:60px;
+	background:var(--theme-color);
+	
+	
+	color:#FFFFFF;
+}
+
+.ThemeA #navigationDrawer{
+	position:absolute;
+	background:var(--theme-color) url('media/ic_apps_white_24dp_1x.png');
+	background-repeat:no-repeat;
+	background-position: center;
+	
+	border-bottom-right-radius:8px;
+	border:none;
+	
+	width:50px;
+	height:50px;
+}
+
+.ThemeA #navigation ul{
+    list-style-type: none;
+	padding:0px;
+}
+
+.ThemeA #navigation ul li{
+	padding:10px;
+	
+}
+
+.ThemeA #navigation ul .category{
+	border:1px solid #AAAAAA;
+	border-left:none;
+	border-right:none;
+}
+
+.ThemeA .searchBar{
+	padding:10px;
+	border:1px solid var(--theme-color);
+	background:#EEEEEE;
+	border-radius:5px;
+	display:inline-block;
+}
+
+.ThemeA .GPSbutton{
+	width:50px;
+	height:50px;
+	background:var(--theme-color);
+	border-radius:5px;
+	border:none;
+	display:inline-block;
+}
+
+.ThemeA #map{
+	float:left;
+	width:calc(100% - 400px);
+}
