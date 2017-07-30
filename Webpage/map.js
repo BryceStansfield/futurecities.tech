@@ -5,6 +5,7 @@ var markers = [];
 var circles = [];
 
 function initMap() {
+	getList("data/fountain.csv", intoPointArray)
 	var goldcoast = {lat: -27.948276, lng: 153.407532};
 	geocoder = new google.maps.Geocoder();
 	directionsDisplay = new google.maps.DirectionsRenderer();
