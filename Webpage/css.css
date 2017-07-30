@@ -4,8 +4,8 @@
 }
 :root {
   --theme-color: #0088FF;
-  --theme-accent: #0088FF;
-  --theme-accent-text: #0088FF;
+  --theme-accent: #A100FF;
+  --theme-accent-text: #A100FF;
   --theme-accent2: #01FF8F;
   --theme-accent-text2: #008A4E;
   --theme-color2: #460170;
@@ -230,7 +230,7 @@ a{
 }
 
 .radio:checked + label > .radioIcon > img{
-	opacity:0.5;
+	opacity:0.8;
 	-webkit-filter: invert(1);
    filter: invert(1);
 }
@@ -273,12 +273,15 @@ iconGrid tr td{
 	z-index:4;
 	
 	position:absolute;
-	left:0px;
 	top:0px;
 	bottom:0px;
 	right:0px;
 	
 	transition: all 0.3s;
+}
+
+.admin #map{
+	left:400px;
 }
 
 #suggestionOverlayBackground{
@@ -380,4 +383,17 @@ iconGrid tr td{
 
 #suggestionPositive:focus, #suggestionNegative:focus{
 	outline:none;
+}
+
+.admin .statistics button{
+	border:none;
+	background:none;
+	padding:10px;
+	
+	color:var(--theme-color);
+	
+	cursor:pointer;
+}
+.admin .statistics button:not(:first-child){
+	border-left:1px solid #AAAAAA;
 }

@@ -1,0 +1,203 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css.css">
+		<script src='js.js'></script>
+		<script src='calcs.js'></script>
+		<script src='map.js'></script>
+		<script src='fetching.js'></script>
+		<script src='location.js'></script>
+		<script src='suggest.js'></script>
+		
+		<!--<script src='calcs.js'></script>-->
+
+		<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoSWQDVbCGKU1jSsncaCLm5Gt0YsQoILI&callback=initMap">
+		</script>
+
+		<title>Future Cities</title>
+	</head>
+	<body id="container" class="admin">
+		
+		<nav id="navigation">
+			<header id="header">
+				<img src="media/skyline.png"></img>
+			</header>
+			<ul>
+				<li class="category" id="searchBar">
+					<input id="mapSearch" type="text" placeholder="Search Places"></input>
+					<button type="button" class="SearchButton" onclick="search()"></button>
+					<button type="button" class="GPSbutton" onclick="getLocation()"></button>
+					
+					<!--
+					<select class="dropDownMenu" name="disatnce">
+						<option value="100">100m</option>
+						<option value="100">200m</option>
+						<option value="100">500m</option>
+						<option value="100">1000m</option>
+						<option value="100">1500m</option>
+						<option value="100">2000m</option>
+
+
+					</select>
+					-->
+				</li>
+				<li class="category">
+					<h3>Current Public Utilities</h3>
+				</li>
+				
+				<li>
+					</form>
+					<table id="iconGrid">
+						<tr>
+							<td>
+								<input class="radio" type="radio" name="utility" value="fountain" id="taps" checked="checked" onclick="selectOption(this)">
+								<label for="taps">
+									<div class="radioIcon">
+										<img src="media/bubbler.png">
+									</div>
+									<p>Bubbler</p>
+								</label>
+							<td>
+							<td>
+								<input class="radio" type="radio" name="utility" value="publictoilet" id="toilets" onclick="selectOption(this)">
+								<label for="toilets">
+									<div class="radioIcon">
+										<img src="media/toilet.png">
+									</div>
+									<p>Toilets</p>
+								</label>
+							<td>
+							<td>
+								<input class="radio" type="radio" name="utility" value="bbq" id="bbq" onclick="selectOption(this)">
+								<label for="bbq">
+									<div class="radioIcon">
+										<img src="media/bbq.png">
+									</div>
+									<p>BBQ</p>
+								</label>
+							<td>
+						</tr>
+						<tr>
+							<td>
+								<input class="radio" type="radio" name="utility" value="shower" id="shower">
+								<label for="shower">
+									<div class="radioIcon">
+										<img src="media/shower.png">
+									</div>
+									<p>Showers</p>
+								</label>
+							<td>
+							<td>
+								<input class="radio" type="radio" name="utility" value="bike_rack" id="bike_rack">
+								<label for="bike_rack">
+									<div class="radioIcon">
+										<img src="media/bike_rack.png">
+									</div>
+									<p>Bike Racks</p>
+								</label>
+							<td>
+							<td>
+								<input class="radio" type="radio" name="utility" value="drone" id="drone">
+								<label for="drone">
+									<div class="radioIcon">
+										<img src="media/drone.png">
+									</div>
+									<p>Drone Area</p>
+								</label>
+							<td>
+						</tr>
+					</form>
+						
+						
+						
+					</table>
+				</li>
+				<li class="category">
+					<h3>Suggested Public Utilities</h3>
+				</li>
+				
+				<li>
+				<form>
+					<table id="iconGrid">
+						<tr>
+							<td>
+								<input class="radio" type="radio" name="utility" value="fountain" id="Staps" checked="checked" onclick="selectOption(this)">
+								<label for="Staps">
+									<div class="radioIcon">
+										<img src="media/bubbler.png">
+									</div>
+									<p>Bubbler</p>
+								</label>
+							<td>
+							<td>
+								<input class="radio" type="radio" name="utility" value="publictoilet" id="Stoilets" onclick="selectOption(this)">
+								<label for="Stoilets">
+									<div class="radioIcon">
+										<img src="media/toilet.png">
+									</div>
+									<p>Toilets</p>
+								</label>
+							<td>
+							<td>
+								<input class="radio" type="radio" name="utility" value="bbq" id="Sbbq" onclick="selectOption(this)">
+								<label for="Sbbq">
+									<div class="radioIcon">
+										<img src="media/bbq.png">
+									</div>
+									<p>BBQ</p>
+								</label>
+							<td>
+						</tr>
+						<tr>
+							<td>
+								<input class="radio" type="radio" name="utility" value="shower" id="Sshower">
+								<label for="Sshower">
+									<div class="radioIcon">
+										<img src="media/shower.png">
+									</div>
+									<p>Showers</p>
+								</label>
+							<td>
+							<td>
+								<input class="radio" type="radio" name="utility" value="bike_rack" id="Sbike_rack">
+								<label for="Sbike_rack">
+									<div class="radioIcon">
+										<img src="media/bike_rack.png">
+									</div>
+									<p>Bike Racks</p>
+								</label>
+							<td>
+							<td>
+								<input class="radio" type="radio" name="utility" value="drone" id="Sdrone">
+								<label for="Sdrone">
+									<div class="radioIcon">
+										<img src="media/drone.png">
+									</div>
+									<p>Drone Area</p>
+								</label>
+							<td>
+						</tr>
+						
+						
+						
+					</table>
+					</form>
+				</li>
+				
+				<li class="category">
+					<h3>Statistics</h3>
+				</li>
+				<li>
+					<p class="statistics">
+						<button type="button">Statistics</button>
+						<button type="button" onclick="populationMap('data/Suburb_Data.csv');">Population</button>
+					</p>
+				</li>
+			</ul>
+
+		</nav>
+		<div id="map">
+			[Google Maps]
+		</div>
+	</body>
+</html>
