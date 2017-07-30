@@ -23,7 +23,6 @@ function distance(point1, point2){ // From http://www.movable-type.co.uk/scripts
 	var a = Math.sin(dl/2) * Math.sin(dl/2) +
         Math.cos(l1) * Math.cos(l2) *
         Math.sin(don/2) * Math.sin(don/2);
-    console.log(a);
 	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
 	return(R * c);
@@ -39,7 +38,7 @@ function closest(places, pos){
 			best = i;
 		}
 	}
-	return([minDist, i]);
+	return([minDist, best]);
 }
 
 function findGaps(places, r, startX, endX, startY, endY, delta){
@@ -114,5 +113,5 @@ function minimizeGapsGreedyApprox(gaps, dotRange, adding){
 
 function directionToNearestPoint(pos){
 	var pointTo = points[closest(points, pos)[1]];
-	direct({lat: pos.lat, lng: pos.long}, {lat:pointTo.lat, lng: pointTo.lng});
+	direct({lat: pos.lat, lng: pos.long}, {lat:pointTo.lat, lng: pointTo.long});
 }

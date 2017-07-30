@@ -4,10 +4,12 @@ function getLocation(){
 
 function search(){
 	string = document.getElementById("mapSearch").value;
-	geocoder.geocode({'address': string, function(results, status){
+	geocoder.geocode({'address': string}, function(results, status){
 		// Lets just ignore bad statuses for now
 		if(status == 'OK'){
-			directionToNearestPoint(new point(results[0].geometry.location.lat, results[0].location.lng));
+			map.panTo(results[0].geometry.location);
+			map.setZoom(17);
+			directionToNearestPoint(new point(results[0].geometry.location.lat, results[0].geometry.location.lng));
 		}
-	}})
+	})
 }
