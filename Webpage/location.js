@@ -14,10 +14,10 @@ function search(){
 	})
 }
 
-function generateUserData(){
+function generateUserData(points){
 	var width = -28.014762 + 28.034765;
 	var points = [];
-	for(var i = 0; i < 100; i++){
+	for(var i = 0; i < points; i++){
 		points.push(new point(-28.034765 - width + 2*width*Math.random(),153.399744 - width + 2*width*Math.random(),50));
 	}
 	massMarkerPlacement(points);
