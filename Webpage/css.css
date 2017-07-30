@@ -1,11 +1,19 @@
 *{
 	margin:0px;
-	font-family:Arial Helvacetica sans-serif;
+	font-family:Arial, Helvacetica, sans-serif;
 }
 :root {
   --theme-color: #0088FF;
+  --theme-accent: #00C8FF;
+  --theme-accent-text: #0088FF;
+  --theme-accent2: #01FF8F;
+  --theme-accent-text2: #008A4E;
   --theme-color2: #460170;
   --grey-color: #AAAAAA;
+}
+
+a{
+	color:var(--theme-accent-text);
 }
 
 #navigation{
@@ -206,9 +214,11 @@
 }
 
 .radio:checked + label > .radioIcon{
-	background:var(--theme-color);
-	
-	
+	background:var(--theme-accent);
+}
+
+.radio:checked + label > .radioIcon > img{
+	opacity:0.5;
 }
 
 .radio + label > p{
@@ -219,13 +229,14 @@
 }
 
 .radio:checked + label > p{
-	color:var(--theme-color);
+	color:var(--theme-accent-text);
 }
 
 .radioIcon img{
 	opacity:0.2;
 	width:100px;
 	height:100px;
+	transition: all 0.1s;
 }
 
 iconGrid tr td{
@@ -234,13 +245,13 @@ iconGrid tr td{
 
 .suggest{
 	padding:10px;
-	border:1px solid var(--theme-color);
+	border:1px solid var(--theme-accent-text);
 	background:#EEEEEE;
 	border-radius:5px;
 	display:inline;
 	vertical-align: middle;
 	
-	color:var(--theme-color);
+	color:var(--theme-accent-text);
 }
 
 
