@@ -1,5 +1,5 @@
 function getLocation(){
-    userPosition = new point(-34.29, 146.04);
+    userPosition = new point(-34.29, 146.04);	// We don't have a https certificate 
 }
 
 function search(){
@@ -12,4 +12,14 @@ function search(){
 			directionToNearestPoint(new point(results[0].geometry.location.lat, results[0].geometry.location.lng));
 		}
 	})
+}
+
+function generateUserData(){
+	var width = -28.014762 + 28.034765;
+	var points = [];
+	for(var i = 0; i < 100; i++){
+		points.append(new point(-28.034765 - width + 2*width*Math.random(),153.399744 - width + 2*width*Math.random(),50));
+		massMarkerPlacement(points);
+		massCirclePlacement(points, 'magenta');
+	}
 }
