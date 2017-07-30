@@ -1,5 +1,6 @@
 function getList(file, handler){
 	var results = "";
+	var handler = handler || intoPointArray;
 	
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
@@ -29,4 +30,12 @@ function intoPointArray(arr){
 		arr[i] = new point(arr[i][0], arr[i][1], range);
 	}
 	points = arr;
+}
+
+function taps(){
+	getList('data/fountain.csv', intoPointArray);
+}
+
+function toilets(){
+	getList('data/publictoilet.csv')
 }
