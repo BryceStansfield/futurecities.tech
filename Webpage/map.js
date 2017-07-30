@@ -1,10 +1,12 @@
 var map = 0;	// Init scope
 var suggestMap;
 var directionsDisplay;
+var markers = [];
+var circles = [];
 
 function initMap() {
 	var goldcoast = {lat: -27.948276, lng: 153.407532};
-
+	gecoder = new google.maps.Geocoder();
 	directionsDisplay = new google.maps.DirectionsRenderer();
 
 	var map = new google.maps.Map(document.getElementById('map'), {
@@ -32,7 +34,8 @@ function massMarkerPlacement(points){
 		var marker = new google.maps.Marker({
 			position: curr,
 			map: map
-		})
+		});
+		markers.push(marker);
 	}
 }
 
@@ -51,8 +54,40 @@ function massCirclePlacement(points, c){
 			strokeWeight: 2,
 			map: map
 		});
+		circles.push(circle);
 	}
 }
+
+function setMapOnAll(map) {
+	for (var i = 0; i < markers.length; i++) {
+		markers[i].setMap(map);
+	}
+}
+
+function clearMarkers() {
+	setMapOnAll(null);
+}
+
+function showMarkers() {
+	setMapOnAll(map);
+}
+
+function deleteMarkers() {
+	clearMarkers();
+	markers = [];
+}
+
+function deleteCircles() {
+	clearMarkers();
+	circles = [];
+}
+
+//use to clear whole map of markers and circles
+function clearMap(){
+	deleteCircles();
+	deleteMarkers();
+}
+
 
 function direct(from, to){
 	var directionsService = new google.maps.DirectionsService;
