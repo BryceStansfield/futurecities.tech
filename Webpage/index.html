@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="css.css">
+		<link rel="stylesheet" href="css2.css">
 		<script src='js.js'></script>
 		<script src='calcs.js'></script>
 		<script src='map.js'></script>
@@ -61,26 +61,70 @@
 				<li class="category">
 					<h3>Public Utilities</h3>
 				</li>
+				
 				<li>
-					<input class="radio" type="radio" name="utility" value="Taps" id="tabs" checked="checked"><label for="taps">Taps</label>
-				</li>
-				<li>
-					<input class="radio" type="radio" name="utility" value="Bathroom"> Toilets
-				</li>
-				<li>
-					<input class="radio" type="radio" name="utility" value="BBQ"> BBQ
-				</li>
-				<li>
-					<input class="radio" type="radio" name="utility" value="Public Shower"> Public Shower
-				</li>
-				<li>
-					<input class="radio" type="radio" name="utility" value="Bubbler"> Bubbler
-				</li>
-				<li>
-					<input class="radio" type="radio" name="utility" value="Bike Rack"> Bike Rack
-				</li>
-				<li>
-					<input class="radio" type="radio" name="utility" value="Elictric Car Charging Station"> Electric Car Charging Station
+					<table id="iconGrid">
+						<tr>
+							<td>
+								<input class="radio" type="radio" name="utility" value="taps" id="taps" checked="checked">
+								<label for="taps">
+									<div class="radioIcon">
+										<img src="media/bubbler.png">
+									</div>
+									<p>Bubbler</p>
+								</label>
+							<td>
+							<td>
+								<input class="radio" type="radio" name="utility" value="toilets" id="toilets">
+								<label for="toilets">
+									<div class="radioIcon">
+										<img src="media/toilet.png">
+									</div>
+									<p>Toilets</p>
+								</label>
+							<td>
+							<td>
+								<input class="radio" type="radio" name="utility" value="bbq" id="bbq">
+								<label for="bbq">
+									<div class="radioIcon">
+										<img src="media/bbq.png">
+									</div>
+									<p>BBQ</p>
+								</label>
+							<td>
+						</tr>
+						<tr>
+							<td>
+								<input class="radio" type="radio" name="utility" value="shower" id="shower">
+								<label for="shower">
+									<div class="radioIcon">
+										<img src="media/shower.png">
+									</div>
+									<p>Showers</p>
+								</label>
+							<td>
+							<td>
+								<input class="radio" type="radio" name="utility" value="bike_rack" id="bike_rack">
+								<label for="bike_rack">
+									<div class="radioIcon">
+										<img src="media/bike_rack.png">
+									</div>
+									<p>Bike Racks</p>
+								</label>
+							<td>
+							<td>
+								<input class="radio" type="radio" name="utility" value="drone" id="drone">
+								<label for="drone">
+									<div class="radioIcon">
+										<img src="media/bike_rack.png">
+									</div>
+									<p>Drones</p>
+								</label>
+							<td>
+						</tr>
+						
+						
+					</table>
 				</li>
 				
 				<li class="category">

@@ -4,10 +4,11 @@
 }
 :root {
   --theme-color: #0088FF;
+  --theme-color2: #460170;
   --grey-color: #AAAAAA;
 }
 
-.ThemeA #navigation{
+#navigation{
 	z-index:5;
 	
 	position:absolute;
@@ -27,12 +28,12 @@
 	left:-400px;
 }
 
-.ThemeA #header{
+#header{
 	background:var(--theme-color);
 	height:90px;
 }
 
-.ThemeA #navigationDrawer{
+#navigationDrawer{
 	z-index:6;
 	
 	position:absolute;
@@ -68,11 +69,11 @@
 	transform: rotate(180deg);
 }
 
-.ThemeA #navigationDrawer:focus{
+#navigationDrawer:focus{
 	outline:none;
 }
 
-.ThemeA #navigation ul{
+#navigation ul{
     list-style-type: none;
 	padding:0px;
 	
@@ -83,21 +84,26 @@
 	overflow:scroll;
 }
 
-.ThemeA #navigation h3{
-    color:var(--theme-color);
+#navigation h3{
+    
 }
 
-.ThemeA #navigation ul li{
+#navigation ul li{
 	padding:10px;
 
 	vertical-align: middle;
 }
 
-.ThemeA #navigation ul .category{
-	border-bottom:1px solid #AAAAAA;
+#navigation ul .category{
+	background:var(--theme-color);
+	
 }
 
-.ThemeA #navigation ul #searchBar{
+#navigation ul .category h3{
+	color:#EEEEEE;
+}
+
+#navigation ul #searchBar{
 	padding:0px;
 	background:#FFFFFF;
 	border-top:1px solid var(--theme-color);
@@ -105,12 +111,13 @@
 	position:relative;
 }
 
+
 #mapSearch:focus, .GPSbutton:focus, .SearchButton:focus{
 	outline:none;
 	border:none;
 }
 
-.ThemeA #mapSearch{
+#mapSearch{
 	padding:20;
 	padding-left:10px;
 	padding-right:70px;
@@ -122,7 +129,7 @@
 	width:calc(100% - 60px);
 }
 
-.ThemeA .GPSbutton{
+.GPSbutton{
 	width:60px;
 	
 	background:url('media/location.png');
@@ -140,7 +147,7 @@
 	cursor:pointer;
 }
 
-.ThemeA .SearchButton{
+.SearchButton{
 	
 	width:60px;
 	
@@ -161,7 +168,7 @@
 	cursor:pointer;
 }
 
-.ThemeA .dropDownMenu{
+.dropDownMenu{
 	padding:10px;
 	border:1px solid var(--theme-color);
 	background:#EEEEEE;
@@ -171,36 +178,60 @@
 
 }
 
-.ThemeA .dropDownMenu option{
+.dropDownMenu option{
 	border:1px solid #AAAAAA;
 
 }
 
-.ThemeA .radio{
-	-webkit-appearance: none;
-	border-radius:11px;
-	vertical-align: middle;
+.radio{
 	
-	width:20px;
-	height:20px;
-	margin-right:5px;
-	
-	border:5px solid #EEEEEE;
-	background:#EEEEEE;
-	box-shadow:0px 0px 0px 1px var(--theme-color);
-	
-	display:inline-block;
+	display:none;
 }
 
-.ThemeA .radio:checked{
-	background:var(--theme-color);
-}
-
-.ThemeA .radio:focus{
+.radio:focus{
 	outline:none;
 }
 
-.ThemeA .suggest{
+.radioIcon{
+	width:100px;
+	height:100px;
+	
+	border-radius:50px;
+	
+	cursor:pointer;
+	
+	background:rgba(0,0,0,0);
+	transition: all 0.1s;
+}
+
+.radio:checked + label > .radioIcon{
+	background:var(--theme-color);
+	
+	
+}
+
+.radio + label > p{
+	width:100px;
+	padding:5px;
+    text-align: center;
+	transition: all 0.1s;
+}
+
+.radio:checked + label > p{
+	color:var(--theme-color);
+}
+
+.radioIcon img{
+	opacity:0.2;
+	width:100px;
+	height:100px;
+}
+
+iconGrid tr td{
+	padding-bottom:10px;
+}
+
+.suggest{
 	padding:10px;
 	border:1px solid var(--theme-color);
 	background:#EEEEEE;
@@ -212,7 +243,7 @@
 }
 
 
-.ThemeA #map{
+#map{
 	z-index:4;
 	
 	position:absolute;
