@@ -113,5 +113,7 @@ function minimizeGapsGreedyApprox(gaps, dotRange, adding){
 
 function directionToNearestPoint(pos){
 	var pointTo = points[closest(points, pos)[1]];
+	console.log(closest(points,pos));
+	console.log(pointTo);
 	direct({lat: pos.lat, lng: pos.long}, {lat:pointTo.lat, lng: pointTo.long});
 }

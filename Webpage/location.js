@@ -9,7 +9,7 @@ function search(){
 		if(status == 'OK'){
 			map.panTo(results[0].geometry.location);
 			map.setZoom(17);
-			directionToNearestPoint(new point(results[0].geometry.location.lat, results[0].geometry.location.lng));
+			directionToNearestPoint(new point(results[0].geometry.location.lat(), results[0].geometry.location.lng()));
 		}
 	})
 }
@@ -18,8 +18,7 @@ function generateUserData(){
 	var width = -28.014762 + 28.034765;
 	var points = [];
 	for(var i = 0; i < 100; i++){
-		points.append(new point(-28.034765 - width + 2*width*Math.random(),153.399744 - width + 2*width*Math.random(),50));
-		massMarkerPlacement(points);
-		massCirclePlacement(points, 'magenta');
+		points.push(new point(-28.034765 - width + 2*width*Math.random(),153.399744 - width + 2*width*Math.random(),50));
 	}
+	massMarkerPlacement(points);
 }
