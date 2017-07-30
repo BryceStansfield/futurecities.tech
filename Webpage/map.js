@@ -12,7 +12,10 @@ function initMap() {
 
 	map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 4,
-		center: goldcoast
+		center: goldcoast,
+		mapTypeControlOptions: {
+        	position:google.maps.ControlPosition.TOP_CENTER
+    	}
 	});
 
 	var suggestMap = new google.maps.Map(document.getElementById('seggestionMap'), {
@@ -119,9 +122,10 @@ function componentToHex(c) {
     return hex.length == 1 ? "0" + hex : hex;
 }
 
-function rgbToHex(r, g, b) {
+function rgbToHex([r, g, b]) {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
+
 
 
 function populationMap(file){
@@ -131,15 +135,15 @@ function populationMap(file){
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			results = this.responseText;
+			console.log(results);
 			results = results.split('\n');
-			for(var i = 0; i < results.length; i++){
-				list.push(results[i].split(','));
-				for(var j = 0; j < list[i].length; j++){
-					list[i][j] = Number(list[i][j]);
-				}
+			var lowest = Number(results[0].split(',')[0]);
+			var highest = Number(results[0].split(',')[1]);
+			var range = highest - lowest;
+			for(var i = 1; i < results.length; i++){
+				var temp = results[i].split(',');
+				massCirclePlacement([new point(Number(temp[0]), Number(temp[1]), 1000)], rgbToHex(cGrad((temp[2]-lowest)*(1/range))));
 			}
-
-			handler(list.slice(1,list.length-2));
 		}
 	};
 	//xhttp.open("GET", "data/" + file, true);
@@ -147,12 +151,4 @@ function populationMap(file){
 	xhttp.send();
 
 	var list = results.split("\n");
-}
-
-function intoPointArray(arr){
-	console.log(arr);
-	for(var i = 0; i < arr.length; i++){
-		arr[i] = new point(arr[i][0], arr[i][1], range);
-	}
-	points = arr;
 }
