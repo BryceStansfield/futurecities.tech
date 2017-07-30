@@ -32,10 +32,6 @@ function intoPointArray(arr){
 	points = arr;
 }
 
-function taps(){
-	getList('data/fountain.csv', intoPointArray);
-}
-
-function toilets(){
-	getList('data/publictoilet.csv')
+function selectOption(object){
+	getList('data/'+object.value+'.csv')
 }
