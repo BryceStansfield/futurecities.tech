@@ -1,11 +1,19 @@
 *{
 	margin:0px;
-	font-family:Arial Helvacetica sans-serif;
+	font-family:Arial, Helvacetica, sans-serif;
 }
 :root {
   --theme-color: #0088FF;
+  --theme-accent: #A100FF;
+  --theme-accent-text: #A100FF;
+  --theme-accent2: #01FF8F;
+  --theme-accent-text2: #008A4E;
   --theme-color2: #460170;
   --grey-color: #AAAAAA;
+}
+
+a{
+	color:var(--theme-accent-text);
 }
 
 #navigation{
@@ -31,6 +39,7 @@
 #header{
 	background:var(--theme-color);
 	height:90px;
+	
 }
 
 #navigationDrawer{
@@ -81,7 +90,7 @@
 	top:90px;
 	bottom:0px;
 	
-	overflow:scroll;
+	overflow:auto;
 }
 
 #navigation h3{
@@ -97,16 +106,27 @@
 #navigation ul .category{
 	background:var(--theme-color);
 	
+	/*
+	outline:#AAA solid 1px;
+	border-bottom:1px solid #888;
+	*/
+	
+}
+
+
+#navigation ul li:not(.category){
+	box-shadow:0px 5px 5px -5px #000000 inset;
 }
 
 #navigation ul .category h3{
+	padding:5px;
 	color:#EEEEEE;
 }
 
 #navigation ul #searchBar{
 	padding:0px;
 	background:#FFFFFF;
-	border-top:1px solid var(--theme-color);
+	
 	
 	position:relative;
 }
@@ -206,9 +226,13 @@
 }
 
 .radio:checked + label > .radioIcon{
-	background:var(--theme-color);
-	
-	
+	background:var(--theme-accent);
+}
+
+.radio:checked + label > .radioIcon > img{
+	opacity:0.8;
+	-webkit-filter: invert(1);
+   filter: invert(1);
 }
 
 .radio + label > p{
@@ -219,13 +243,14 @@
 }
 
 .radio:checked + label > p{
-	color:var(--theme-color);
+	color:var(--theme-accent-text);
 }
 
 .radioIcon img{
 	opacity:0.2;
 	width:100px;
 	height:100px;
+	transition: all 0.1s;
 }
 
 iconGrid tr td{
@@ -234,13 +259,13 @@ iconGrid tr td{
 
 .suggest{
 	padding:10px;
-	border:1px solid var(--theme-color);
+	border:1px solid var(--theme-accent-text);
 	background:#EEEEEE;
 	border-radius:5px;
 	display:inline;
 	vertical-align: middle;
 	
-	color:var(--theme-color);
+	color:var(--theme-accent-text);
 }
 
 
@@ -248,12 +273,15 @@ iconGrid tr td{
 	z-index:4;
 	
 	position:absolute;
-	left:0px;
 	top:0px;
 	bottom:0px;
 	right:0px;
 	
 	transition: all 0.3s;
+}
+
+.admin #map{
+	left:400px;
 }
 
 #suggestionOverlayBackground{
@@ -295,9 +323,22 @@ iconGrid tr td{
 	
 	position:absolute;
 	top:50px;
+	bottom:150px;
+	left:0px;
+	right:0px;
+}
+
+#suggestionText{
+	position:absolute;
 	bottom:50px;
 	left:0px;
 	right:0px;
+	
+	height:100px;
+	width:100%;
+	
+	padding:10px;
+	resize: none;
 }
 
 #suggestionOptions{
@@ -307,7 +348,6 @@ iconGrid tr td{
 	left:0px;
 	right:0px;
 	
-	height:50px;
 }
 
 #suggestionPositive{
@@ -343,4 +383,17 @@ iconGrid tr td{
 
 #suggestionPositive:focus, #suggestionNegative:focus{
 	outline:none;
+}
+
+.admin .statistics button{
+	border:none;
+	background:none;
+	padding:10px;
+	
+	color:var(--theme-color);
+	
+	cursor:pointer;
+}
+.admin .statistics button:not(:first-child){
+	border-left:1px solid #AAAAAA;
 }

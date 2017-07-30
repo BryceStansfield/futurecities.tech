@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="css2.css">
+		<link rel="stylesheet" href="css.css">
 		<script src='js.js'></script>
 		<script src='calcs.js'></script>
 		<script src='map.js'></script>
@@ -26,6 +26,7 @@
 				<div id="seggestionMap">
 				
 				</div>
+				<textarea id="suggestionText" placeholder="Why?"></textarea>
 				<div id="suggestionOptions">
 					<button type="button" id="suggestionPositive" onclick="suggest(true)">Suggest</button>
 					<button type="button" id="suggestionNegative" onclick="suggest(false)">Cancel</button>
@@ -66,7 +67,7 @@
 					<table id="iconGrid">
 						<tr>
 							<td>
-								<input class="radio" type="radio" name="utility" value="taps" id="taps" checked="checked" onclick="taps()", 'intoPointArray')">
+								<input class="radio" type="radio" name="utility" value="fountain" id="taps" checked="checked" onclick="selectOption(this)">
 								<label for="taps">
 									<div class="radioIcon">
 										<img src="media/bubbler.png">
@@ -75,7 +76,7 @@
 								</label>
 							<td>
 							<td>
-								<input class="radio" type="radio" name="utility" value="toilets" id="toilets" onclick="toilets()">
+								<input class="radio" type="radio" name="utility" value="publictoilet" id="toilets" onclick="selectOption(this)">
 								<label for="toilets">
 									<div class="radioIcon">
 										<img src="media/toilet.png">
@@ -84,7 +85,7 @@
 								</label>
 							<td>
 							<td>
-								<input class="radio" type="radio" name="utility" value="bbq" id="bbq">
+								<input class="radio" type="radio" name="utility" value="bbq" id="bbq" onclick="selectOption(this)">
 								<label for="bbq">
 									<div class="radioIcon">
 										<img src="media/bbq.png">
@@ -116,9 +117,9 @@
 								<input class="radio" type="radio" name="utility" value="drone" id="drone">
 								<label for="drone">
 									<div class="radioIcon">
-										<img src="media/bike_rack.png">
+										<img src="media/drone.png">
 									</div>
-									<p>Drones</p>
+									<p>Drone Area</p>
 								</label>
 							<td>
 						</tr>
@@ -132,10 +133,10 @@
 					<h3>Suggestions</h3>
 				</li>
 				<li>
-					<p>Suggest a new public utility in your area</p>
-				</li>
-				<li>
-					<button type="button" class="Suggest" onclick="selectSuggestion()">Suggest</button>
+					<p>Suggest a new public utility in your area</p><br>
+					<p>
+						<button type="button" class="Suggest" onclick="selectSuggestion()">Suggest</button>
+					</p>
 				</li>
 				<li class="category">
 					<h3>About</h3>
