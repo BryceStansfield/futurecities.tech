@@ -62,6 +62,7 @@ function massCirclePlacement(points, c){
 
 function setMapOnAll(map) {
 	for (var i = 0; i < markers.length; i++) {
+		circles[i].setMap(map);
 		markers[i].setMap(map);
 	}
 }
