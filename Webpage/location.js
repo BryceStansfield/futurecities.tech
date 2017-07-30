@@ -1,11 +1,13 @@
 function getLocation(){
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        alert("Cannot access geo locations");
-    }
+    userPosition = new point(-34.29, 146.04);
 }
 
-function showPosition(position) {
-	alert(position.coords.latitude +" : "+ position.coords.longitude);
+function search(){
+	string = document.getElementById("mapSearch").value;
+	geocoder.geocode({'address': string, function(results, status){
+		// Lets just ignore bad statuses for now
+		if(status == 'OK'){
+			directionToNearestPoint(new point(results[0].geometry.location.lat, results[0].location.lng));
+		}
+	}})
 }
