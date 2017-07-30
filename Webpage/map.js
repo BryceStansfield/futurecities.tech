@@ -9,7 +9,7 @@ function initMap() {
 	geocoder = new google.maps.Geocoder();
 	directionsDisplay = new google.maps.DirectionsRenderer();
 
-	var map = new google.maps.Map(document.getElementById('map'), {
+	map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 4,
 		center: goldcoast
 	});
@@ -21,10 +21,8 @@ function initMap() {
 
 	directionsDisplay.setMap(map);
 
-	var marker = new google.maps.Marker({
-		position: goldcoast,
-		map: map
-	});
+	map.setZoom(10);
+    map.panTo(goldcoast);
 }
 
 function massMarkerPlacement(points){
