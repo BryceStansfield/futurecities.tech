@@ -2,7 +2,6 @@ var map = 0;	// Init scope
 var suggestMap;
 var directionsDisplay;
 var markers = [];
-var circles = [];
 
 function initMap() {
 	getList("data/fountain.csv", intoPointArray)
@@ -56,13 +55,12 @@ function massCirclePlacement(points, c){
 			strokeWeight: 2,
 			map: map
 		});
-		circles.push(circle);
+		markers.push(circle);
 	}
 }
 
 function setMapOnAll(map) {
 	for (var i = 0; i < markers.length; i++) {
-		circles[i].setMap(map);
 		markers[i].setMap(map);
 	}
 }
@@ -80,14 +78,9 @@ function deleteMarkers() {
 	markers = [];
 }
 
-function deleteCircles() {
-	clearMarkers();
-	circles = [];
-}
 
 //use to clear whole map of markers and circles
 function clearMap(){
-	deleteCircles();
 	deleteMarkers();
 }
 
