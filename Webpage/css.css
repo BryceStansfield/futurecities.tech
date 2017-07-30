@@ -4,7 +4,7 @@
 }
 :root {
   --theme-color: #0088FF;
-  --theme-accent: #00C8FF;
+  --theme-accent: #0088FF;
   --theme-accent-text: #0088FF;
   --theme-accent2: #01FF8F;
   --theme-accent-text2: #008A4E;
@@ -231,6 +231,8 @@ a{
 
 .radio:checked + label > .radioIcon > img{
 	opacity:0.5;
+	-webkit-filter: invert(1);
+   filter: invert(1);
 }
 
 .radio + label > p{
