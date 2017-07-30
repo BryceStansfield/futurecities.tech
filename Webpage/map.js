@@ -16,7 +16,7 @@ function initMap() {
 		zoom: 4,
 		center: goldcoast
 	});
-	
+
 	directionsDisplay.setMap(map);
 
 	var marker = new google.maps.Marker({
@@ -68,4 +68,23 @@ function direct(from, to){
 	    	directionsDisplay.setDirections(result);
 	    }
 	});
+}
+
+function cGrad(val){
+	var colourA = [0, 0, 255]; // blue
+	var colourB = [255, 0, 0]; // red
+	var colourR = [0, 0, 0];
+	for(var i = 0; i < 3; i++){
+		colourR[i] = Math.ceil(colourA[i] + val * (colourB[i] - colourA[i]));
+	}
+	return(colourR);
+}
+
+function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
