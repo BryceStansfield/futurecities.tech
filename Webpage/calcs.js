@@ -1,3 +1,8 @@
+var range = 1000;
+var points = [];
+var secondaryPoints = [];
+var userPosition = new point(0,0);
+
 function point(lat, long, radius){
 	this.lat = lat;
 	this.long = long;
@@ -47,7 +52,7 @@ function findGaps(places, r, startX, endX, startY, endY, delta){
 		while(y <= endY){
 			isGap = true;
 			for(var i = 0; i < places.length; i++){
-				if(distance(point(x,y), places[i]) <= r){
+				if(distance(new point(x,y), places[i]) <= r){
 					isGap = false;
 					i = Infinity;
 				}
@@ -107,3 +112,7 @@ function minimizeGapsGreedyApprox(gaps, dotRange, adding){
 	return(place);
 }
 
+function directionToNearestPoint(pos){
+	var pointTo = points[closest(points, pos)[1]];
+	direct({lat: pos.lat, lng: pos.long}, {lat:pointTo.lat, lng: pointTo.lng});
+}

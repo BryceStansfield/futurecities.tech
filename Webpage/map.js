@@ -6,7 +6,7 @@ var circles = [];
 
 function initMap() {
 	var goldcoast = {lat: -27.948276, lng: 153.407532};
-	gecoder = new google.maps.Geocoder();
+	geocoder = new google.maps.Geocoder();
 	directionsDisplay = new google.maps.DirectionsRenderer();
 
 	var map = new google.maps.Map(document.getElementById('map'), {
